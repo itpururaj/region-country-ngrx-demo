@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row card-header">
+    <div class="col">
+      <span>Country</span>
+    </div>
+    <div class="col">
+      <span>Capital</span>
+    </div>
+    <div class="col">
+      <span>Population</span>
+    </div>
+    <div class="col">
+      <span>Currencies</span>
+    </div>
+    <div class="col">
+      <span>Flag</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      {{ selectedCountry?.name }}
+    </div>
+    <div class="col">
+      {{ selectedCountry?.capital }}
+    </div>
+    <div class="col">
+      {{ selectedCountry?.population }}
+    </div>
+    <div class="col">
+      <ul>
+        <p *ngFor="let currency of selectedCountry?.currencies">
+          <li>{{ currency?.name }}</li>
+        </p>
+      </ul>
+    </div>
+    <div class="col">
+      <img src="{{ selectedCountry?.flag }}" class="thumbnail"/>
+    </div>
+  </div>
+</div>
+

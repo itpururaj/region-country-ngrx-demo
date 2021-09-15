@@ -1,0 +1,10 @@
+<select (change)="onRegion(regionList.value)"
+#regionList>
+    <option value="">Select</option>
+    <option
+    *ngFor="let item of listItems"
+    [value]="item"
+    >{{ item }}</option
+    >
+</select>
+

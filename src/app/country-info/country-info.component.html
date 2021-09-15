@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="row table">
+                <div class="col-1">
+                    <span>Region:</span>
+                </div>
+                <div class="col-2">
+                    <app-select-list [listItems]="regionsList" (itemSelectedEvent)="onRegionSelection($event)">
+                    </app-select-list>
+                </div>
+                <div class="col-1">
+                    <span>Countries:</span>
+                </div>
+                <div class="col-5">
+                    <app-select-list [listItems]="filteredCountries" (itemSelectedEvent)="onCountrySelection($event)">
+                    </app-select-list>
+                </div>
+            </div>
+        </div>
+        <div class="card-body" *ngIf="selectedCountry?.name">
+            <div class="row">
+                <div class="col">
+                    <app-country-detail [selectedCountry]="selectedCountry"></app-country-detail>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
